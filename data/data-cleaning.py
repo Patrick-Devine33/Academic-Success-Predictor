@@ -22,7 +22,8 @@ minpass_grade = 12
 # Ensure columns are properly formatted
 
 upper_columns = ['school', 'sex', 'address', 'famsize', 'Pstatus']
-lower_columns = ['reason', 'guardian', 'schoolsup', 'famsup', 'paid', 'activities', 'nursery', 'higher', 'internet', 'romantic']
+lower_columns = ['reason', 'guardian', 'schoolsup', 'famsup', 'paid',
+                 'activities', 'nursery', 'higher', 'internet', 'romantic']
 
 for col in upper_columns:
     df[col] = df[col].str.upper()
@@ -33,6 +34,26 @@ for col in lower_columns:
 
 # Remove null and invalid data
 df = df[df['school'].isin(valid_school)]
+df = df[df['sex'].isin(valid_sex)]
+df = df[df['address'].isin(valid_address)]
+df = df[df['famsize'].isin(valid_famsize)]
+df = df[df['Pstatus'].isin(valid_pstatus)]
+df = df[df['reason'].isin(valid_reason)]
+df = df[df['Grade'].isin(valid_grade)]
+
+scale4 = ['Medu', 'Fedu', 'traveltime', 'studytime']
+scale5 = ['famrel', 'freetime', 'goout', 'Dalc', 'Walc', 'health']
+yes_no = ['schoolsup', 'famsup', 'paid', 'activities', 'nursery', 'higher',
+          'internet', 'romantic']
+
+for col in scale4:
+    df = df[df[col].isin(valid_4scale)]
+
+for col in scale5:
+    df = df[df[col].isin(valid_5scale)]
+
+for col in yes_no:
+    df = df[df[col].isin(valid_yes_no)]
 
 # Show dataset
-print(df.head())
+print(df)
