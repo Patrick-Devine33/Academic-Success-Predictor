@@ -9,7 +9,7 @@ df = pd.read_csv('data/assign1-grades.csv')
 valid_school = ['GP', 'MS']
 valid_sex = ['F', 'M']
 valid_address = ['U', 'R']
-valid_famsize = ['GT3', 'LT3']
+valid_famsize = ['GT3', 'LE3']
 valid_pstatus = ['T', 'A']
 valid_reason = ['home', 'reputation', 'course', 'other']
 valid_yes_no = ['yes', 'no']
@@ -54,6 +54,9 @@ for col in scale5:
 
 for col in yes_no:
     df = df[df[col].isin(valid_yes_no)]
+
+# Create a pass/fail column utilsing Grades
+df['result'] = np.where(df['Grade'] >= minpass_grade, 'pass', 'fail')
 
 # Show dataset
 print(df)
