@@ -59,4 +59,4 @@ for col in yes_no:
 df['result'] = np.where(df['Grade'] >= minpass_grade, 'pass', 'fail')
 
 # Save dataset
-df.to_csv('formatted_data.csv')
+df.to_csv('data/formatted_data.csv')
