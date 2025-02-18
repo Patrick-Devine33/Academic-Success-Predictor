@@ -58,5 +58,5 @@ for col in yes_no:
 # Create a pass/fail column utilsing Grades
 df['result'] = np.where(df['Grade'] >= minpass_grade, 'pass', 'fail')
 
-# Show dataset
-print(df)
+# Save dataset
+df.to_csv('formatted_data.csv')
