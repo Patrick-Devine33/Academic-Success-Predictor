@@ -1,4 +1,3 @@
-import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -17,5 +16,3 @@ for column in all_column:
     plt.ylabel('Count')
     plt.title(f'Distribution of {column}')
     plt.show()
-
-
