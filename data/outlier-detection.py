@@ -7,6 +7,11 @@ df = pd.read_csv('formatted_data.csv')
 # Select columns for processing outliers
 all_column = ['age', 'Mjob', 'Fjob', 'guardian', 'schoolsup', 'famsup', 'paid', 'activities', 'nursery', 'higher', 'internet', 'romantic']
 
+# Give specific rows counts
+for i in all_column:
+    value_counts = df[i].value_counts().sort_index()
+    print(value_counts)
+
 # Draw bar chart for each column
 for column in all_column:
     data_counts = df[column].value_counts().sort_index()
