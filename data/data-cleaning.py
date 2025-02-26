@@ -6,7 +6,7 @@ def clean_data(dir):
     """_summary_
 
     Args:
-        dir (_csv_): the path of a csv data set you would like to be cleaned
+        dir (_str_): the path of a csv data set you would like to be cleaned
 
     Returns:
         _pandas.df_: returns the cleaned dataset in a pandas dataframe
