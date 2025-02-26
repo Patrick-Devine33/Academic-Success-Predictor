@@ -2,10 +2,11 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Read in dataset 
-df = pd.read_csv('formatted_data.csv')
+df = pd.read_csv('data/formatted_data.csv')
 
 # Select columns for processing outliers
-all_column = ['age', 'Mjob', 'Fjob', 'guardian', 'schoolsup', 'famsup', 'paid', 'activities', 'nursery', 'higher', 'internet', 'romantic']
+#all_column = ['age', 'Mjob', 'Fjob', 'guardian', 'schoolsup', 'famsup', 'paid', 'activities', 'nursery', 'higher', 'internet', 'romantic']
+all_column = df.columns.values()
 
 # Give specific rows counts
 for i in all_column:
