@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 from sklearn import svm
 from sklearn.model_selection import KFold, GridSearchCV, cross_val_score
-from sklearn.metrics import accuracy_score
+# from sklearn.metrics import accuracy_score
 
 # Read in and seperate data
 prep_data = pd.read_csv('data/df_vif_cleaned.csv')
@@ -20,7 +20,6 @@ classifier = svm.SVC()
 param_grid = {
     'C': [0.1, 1, 10],
     'kernel': ['linear', 'poly', 'rbf'],
-    # 'degree': [3, 6, 9],
     'gamma': ['scale', 'auto']
 }
 
@@ -45,6 +44,8 @@ average_acc = np.mean(scores)
 print(f"Accuracy Score for each fold: {[round(score, 4) for score in scores]}")
 print(f"Average accuracy across 5 folds: {average_acc:.2f}")
 
+
+'''
 for i, (train_index, test_index) in enumerate(kfold.split(X, y)):
     print(f'fold {i}')
     X_test, y_test = X.iloc[test_index], y.iloc[test_index]
@@ -58,6 +59,6 @@ for i, (train_index, test_index) in enumerate(kfold.split(X, y)):
     print(accuracy)
     print(X_test.iloc[misclass])
     print(y_test[misclass])
-
+'''
 
 # studytime, failures, internet, Walc?, address?, guardian
