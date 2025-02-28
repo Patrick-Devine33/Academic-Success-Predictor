@@ -26,7 +26,8 @@ param_grid = {
 # Set up KFold and grid search
 kfold = KFold(5, shuffle=True, random_state=42)
 
-grid_search = GridSearchCV(classifier, param_grid, cv=kfold, scoring='accuracy', n_jobs=-1)
+grid_search = GridSearchCV(classifier, param_grid, cv=kfold,
+                           scoring='accuracy')
 
 print('Starting grid search to optimise hyperparams')
 grid_search.fit(X, y)
