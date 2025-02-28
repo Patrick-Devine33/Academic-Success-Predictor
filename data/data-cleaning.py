@@ -10,7 +10,7 @@ def clean_data(dir):
 
     Returns:
         _pandas.df_: returns the cleaned dataset in a pandas dataframe
-    """ 
+    """
     # Read in data set
     df = pd.read_csv(dir)
 
@@ -32,14 +32,13 @@ def clean_data(dir):
 
     upper_columns = ['school', 'sex', 'address', 'famsize', 'Pstatus']
     lower_columns = ['reason', 'guardian', 'schoolsup', 'famsup', 'paid',
-                    'activities', 'nursery', 'higher', 'internet', 'romantic']
+                     'activities', 'nursery', 'higher', 'internet', 'romantic']
 
     for col in upper_columns:
         df[col] = df[col].str.upper()
 
     for col in lower_columns:
         df[col] = df[col].str.lower()
-
 
     # Remove null and invalid data
     df = df[df['school'].isin(valid_school)]
@@ -53,7 +52,7 @@ def clean_data(dir):
     scale4 = ['Medu', 'Fedu', 'traveltime', 'studytime']
     scale5 = ['famrel', 'freetime', 'goout', 'Dalc', 'Walc', 'health']
     yes_no = ['schoolsup', 'famsup', 'paid', 'activities', 'nursery', 'higher',
-            'internet', 'romantic']
+              'internet', 'romantic']
 
     for col in scale4:
         df = df[df[col].isin(valid_4scale)]
