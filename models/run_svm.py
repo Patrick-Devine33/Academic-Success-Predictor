@@ -17,11 +17,12 @@ X.columns = X.columns.astype(str)
 classifier = svm.SVC()
 
 # Define hyperparameter grid
-param_grid = {
-    'C': [0.1, 1, 10],
-    'kernel': ['linear', 'poly', 'rbf'],
-    'gamma': ['scale', 'auto']
-}
+param_grid = [
+    {'kernel': ['linear'], 'C': [0.1, 1, 10]},
+    {'kernel': ['rbf'], 'C': [0.1, 1, 10], 'gamma': ['scale', 'auto']},
+    {'kernel': ['poly'], 'C': [0.1, 1, 10], 'gamma': ['scale', 'auto'],
+     'degree': [2, 3, 4]}
+    ]
 
 # Set up KFold and grid search
 kfold = KFold(5, shuffle=True, random_state=42)
