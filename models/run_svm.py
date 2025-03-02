@@ -7,10 +7,8 @@ from sklearn.model_selection import KFold, GridSearchCV, cross_val_score
 # Read in and seperate data
 prep_data = pd.read_csv('data/df_vif_cleaned.csv')
 y = prep_data['result_pass'].astype(int)
-X = prep_data.drop(['result_pass', 'paid', 'Pstatus_T',
-                    'famsize_LE3', 'sex_M', 'romantic', 'traveltime',
-                    'health', 'absences', 'schoolsup', 'famsup', 'activities',
-                    'nursery', 'Dalc', 'Mjob_other', 'Fjob_other'], axis=1)
+X = prep_data.drop(['result_pass', 'traveltime', 'paid', 'Dalc',
+                    'absences'], axis=1)
 X.columns = X.columns.astype(str)
 
 # Define our classifier
