@@ -50,7 +50,8 @@ print(f"Average accuracy across 5 folds: {average_acc:.2f}")
 # Print out scores for each param combo
 accuracys = pd.DataFrame(grid_search.cv_results_)
 accuracys = accuracys.sort_values('rank_test_score')
-print(accuracys[['param_C', 'param_kernel', 'param_gamma', 'param_degree', 'mean_test_score']])
+print(accuracys[['param_C', 'param_kernel', 'param_gamma', 'param_degree',
+                'mean_test_score']])
 
 
 '''
