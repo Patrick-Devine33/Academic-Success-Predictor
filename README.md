@@ -28,11 +28,24 @@ Encoding
 
 Experimental Protocol
 
-* Use 5-fold cross-validation to mitigate overfitting.
+* Use 5-fold cross-validation to mitigate over-fitting.
 * Shuffle and split data into 5 groups for iterative training/testing.
 * Compute average model accuracy from the 5 validation folds.
 
 ## Model Training
 
+SVM
+
+
+
+Random Forest
+
+
+
+Logistic Regression
+
+
+
 
 ## Evaluate Models
+
