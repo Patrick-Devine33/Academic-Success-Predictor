@@ -88,7 +88,16 @@ Final Choice: SVM, due to highest cross-validation accuracy.
 
 ## Evaluate Models
 
-Results:
-* The testing accuracy for our final model is 80.1%. The table below contains the classification report. 
+### Results:
+The testing accuracy for our final model is 80.1%. 
 
-* Confusion Matrix
+* The table below contains the classification report:
+<img width="512" alt="Screenshot 2025-03-10 at 21 40 44" src="https://github.com/user-attachments/assets/5fec4a8b-c197-4943-9bf3-32031590825d" />
+
+### Confusion Matrix
+
+<img width="455" alt="Screenshot 2025-03-10 at 21 40 28" src="https://github.com/user-attachments/assets/83015d57-8ded-4f90-baf0-d30e7a572db6" />
+
+## Conclusion
+
+Overall, our model performed well in correctly predicting those who passed with high precision (81%) and F1-score (84%), suggesting that our SVM model is better at classifying passes. Having a high F1-score indicates that the model is effective at making correct positive decisions and minimising false positives and false negatives for passes. However, it performed slightly worse at classifying failures. This is especially true when looking at the recall score (72%). The model is not optimal in identifying students who will fail. The test accuracy is 5.7% higher than the validation accuracy, which could indicate more data is needed.
