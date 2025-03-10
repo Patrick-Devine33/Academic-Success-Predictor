@@ -16,10 +16,15 @@ Data Cleaning
 * Remove null values and ensure consistent formatting.
 * Compute 'pass/fail' labels based on a minimum grade of 12.
 * Drop outliers (age <13 or >21) and remove the imbalanced 'paid' column.
+* Apply SMOTE to generate synthetic samples for the minority class, improving recall and enhancing decision boundary learning.
 
 Correlation Evaluation
 
-* to be continued
+* Analyze correlations to identify key predictors of academic success.
+* Remove attributes with p < 0.05.
+* Apply Variance Inflation Factor (VIF) with a threshold of 12 to address multicollinearity.
+* Drop highly correlated attributes.
+* Remove additional attributes: 'age', 'famrel', 'goout', and 'freetime'.
 
 Encoding
 
