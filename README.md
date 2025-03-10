@@ -33,19 +33,57 @@ Experimental Protocol
 * Compute average model accuracy from the 5 validation folds.
 
 ## Model Training
+This project predicts whether a student will pass an academic year using machine learning, comparing three models: SVM, Random Forest, and Logistic Regression.
 
-SVM
+Hyperparameter Protocol
 
+* GridSearchCV with 5-fold cross-validation was used to optimize model performance. If an optimal value was on the edge of tested values, further refinement was conducted.
 
+>SVM
 
-Random Forest
+* Best Hyperparameters:
+Kernel: poly /
+C: 10 / 
+Gamma: 0.01 /
+Degree: 2 
 
+* Accuracy: 74.4%
 
+* Polynomial kernels (degrees 2 and 3) performed best, indicating non-linear relationships.
 
-Logistic Regression
+>Random Forest
 
+* Best Hyperparameters:
+Estimators: 150 / 
+Max depth: 3 / 
+Min split samples: 20 / 
+Min leaf samples: 15 / 
+Max features: log2
 
+* Accuracy: 74.1%
 
+* Lower max depth reduced overfitting; log2 feature selection yielded better results.
+
+>Logistic Regression
+
+* Best Hyperparameters:
+Penalty: l2 / 
+C: 0.10 / 
+Solver: saga / 
+
+* Accuracy: 74.3%
+
+* Stronger regularization improved generalization; saga solver performed best.
+
+Model Comparison
+
+* SVM: 74.4% / Random Forest: 74.1% / Logistic Regression: 74.3%
+
+Final Choice: SVM, due to highest cross-validation accuracy.
 
 ## Evaluate Models
 
+Results:
+* The testing accuracy for our final model is 80.1%. The table below contains the classification report. 
+
+* Confusion Matrix
